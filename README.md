@@ -34,10 +34,20 @@ Handwritten digit recognition is a key challenge in computer vision and machine 
   -  Train and evaluate the LeNet5 model’s performance on the MNIST dataset.
 
 # Dataset
-  - The MNIST dataset consists of grayscale images of size 28x28 pixels, each representing a digit from 0 to 9. The dataset is split into:
+  The MNIST dataset consists of grayscale images of size 28x28 pixels, each representing a digit from 0 to 9. The dataset is split into:
   - **Training set**: 60,000 images
   - **Test set**: 10,000 images
 
+![download (1)](https://github.com/yashshah9/Infosys-AI-Internship-/assets/160280438/a06ada1d-b668-448f-8b7d-5ad09b570258)
+
+# Model Architecture
+  LeNet-5 is a CNN architecture proposed by Yann LeCun. It consists of:
+  - Two convolutional layers
+  - Two subsampling (pooling) layers
+  - Two fully connected layers
+  - One output layer with softmax activation
+    
+![project_proposal_pytorch-pdf](https://github.com/yashshah9/Infosys-AI-Internship-/assets/160280438/9bc8308a-c159-4b3f-aa10-24c97581d719)
 
 
 
