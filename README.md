@@ -15,24 +15,28 @@ Handwritten digit recognition is a key challenge in computer vision and machine 
 
 # Flow Of Project
  ### The MNIST Handwritten Digit Recognition Problem
-  - • Introduce the MNIST dataset and its significance in the field of machine learning.
-  - • Explain the problem of handwritten digit recognition and its applications.
+  -  Introduce the MNIST dataset and its significance in the field of machine learning.
+  -  Explain the problem of handwritten digit recognition and its applications.
  ### Loading the MNIST Dataset in PyTorch
-  - • Provide instructions for downloading and loading the MNIST dataset using PyTorch’s DataLoader.
-  - • Preprocess the dataset, including normalization and data augmentation techniques.
+  -  Provide instructions for downloading and loading the MNIST dataset using PyTorch’s DataLoader.
+  -  Preprocess the dataset, including normalization and data augmentation techniques.
  ### Baseline Model with Multilayer Perceptrons
-  - • Implement a baseline model using a simple Multilayer Perceptron (MLP).
-  - • Train and evaluate the model’s performance on the MNIST dataset.
+  -  Implement a baseline model using a simple Multilayer Perceptron (MLP).
+  -  Train and evaluate the model’s performance on the MNIST dataset.
  ### Simple Convolutional Neural Network for MNIST
-  - • Introduce the concept of Convolutional Neural Networks (CNNs) and their advantages in image
+  -  Introduce the concept of Convolutional Neural Networks (CNNs) and their advantages in image
       recognition tasks.
-  - • Implement a simple CNN architecture using PyTorch for handwritten digit recognition.
-  - • Train and evaluate the CNN model’s performance on the MNIST dataset.
+  -  Implement a simple CNN architecture using PyTorch for handwritten digit recognition.
+  -  Train and evaluate the CNN model’s performance on the MNIST dataset.
  ### LeNet5 for MNIST
-  - • Introduce the LeNet5 architecture, one of the pioneering CNN models for image classification.
-  - • Implement the LeNet5 model architecture using PyTorch for recognizing handwritten digits.
-  - • Train and evaluate the LeNet5 model’s performance on the MNIST dataset.
+  -  Introduce the LeNet5 architecture, one of the pioneering CNN models for image classification.
+  -  Implement the LeNet5 model architecture using PyTorch for recognizing handwritten digits.
+  -  Train and evaluate the LeNet5 model’s performance on the MNIST dataset.
 
+# Dataset
+  - The MNIST dataset consists of grayscale images of size 28x28 pixels, each representing a digit from 0 to 9. The dataset is split into:
+  - **Training set**: 60,000 images
+  - **Test set**: 10,000 images
 
 
 
