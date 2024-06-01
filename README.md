@@ -5,7 +5,11 @@
 The MNIST dataset is a benchmark in the field of computer vision and machine learning. It contains 60,000 training images and 10,000 testing images of handwritten digits. Our goal is to develop a model that can accurately classify these digits. We use the LeNet-5 model, a pioneering convolutional neural network (CNN) architecture, implemented with PyTorch.
 
 # Table Of Contents
- 
+ - [Introduction](#introduction)
+- [Flow Of Project](#Flow-Of-Project)
+- [Dataset](#Dataset)
+- [Model Architecture](#Model-Architecture)
+- [Contributing](#contributing)
 
 
 
@@ -50,6 +54,8 @@ Handwritten digit recognition is a key challenge in computer vision and machine 
 ![project_proposal_pytorch-pdf](https://github.com/yashshah9/Infosys-AI-Internship-/assets/160280438/9bc8308a-c159-4b3f-aa10-24c97581d719)
 
 
+## Contributing
+Contributions are welcome! Please fork the repository and create a pull request with your improvements.
 
 
 
