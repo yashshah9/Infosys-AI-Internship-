@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group-V | Handwritten Digit Recognition</title>
+    <meta name="description" content="Handwritten Digit Recognition using multiple models trained on the MNIST dataset.">
+    <!-- Link to Tailwind CSS for styling -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Link to custom CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="bg-gray-900 font-sans">
+    <!-- Header section -->
+    <header class="bg-yellow-600 text-white py-8 sm:py-12">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-2xl sm:text-4xl font-bold leading-tight">Handwritten Digit Recognition</h1>
+                <p class="mt-2 sm:text-lg">Using Various Models</p>
+                <p class="mt-2 text-base sm:text-lg">Trained on MNIST Dataset</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content section -->
+    <main class="py-8">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Left section: Canvas and controls -->
+                <div class="flex flex-col justify-center items-center bg-white rounded-lg shadow-md p-6">
+                    <canvas id="sketchpad" class="border border-gray-300 mb-4" height="200" width="200" aria-label="Canvas for drawing digits"></canvas>
+                    <button type="button" class="bg-gray-800 text-white w-full py-2 px-4 rounded-md shadow-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600" id="clear_button" aria-label="Clear Canvas">Clear</button>
+                    <div id="select_it" class="mt-4">
+                        <label for="model-select" class="mr-2">Select Model:</label>
+                        <select id="model-select" class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-600">
+                            <option value="lenet">LeNet-5</option>
+                            <option value="mlp">MLP</option>
+                            <option value="logistic">Logistic Regression</option>
+                        </select>
+                        <button type="button" class="bg-gray-800 text-white ml-2 py-2 px-4 rounded-md shadow-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600" id="predict_button" aria-label="Predict">Predict</button>
+                        <div id="prediction-result" class="text-black text-2xl font-bold mt-4"></div>
+                    </div>
+                </div>
+                <!-- Right section: Bar chart for displaying prediction results -->
+                <div class="flex flex-col justify-center items-center bg-white rounded-lg shadow-md p-6">
+                    <canvas id="barChart" width="400" height="400" aria-label="Bar chart displaying prediction results"></canvas>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer section -->
+    <footer class="bg-yellow-700 text-white py-4">
+        <div class="container mx-auto px-6 lg:px-8 text-center">
+            <p>&copy; 2024 Group - V - Infosys Springboard Internship. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Link to Chart.js library for creating charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Link to custom JavaScript file -->
+    <script src="{{ url_for('static', filename='scripts.js') }}" defer></script>
+</body>
+</html>
