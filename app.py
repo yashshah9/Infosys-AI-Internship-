@@ -8,9 +8,9 @@ from tensorflow.keras.models import load_model
 app = Flask(__name__)
 
 # Load pre-trained models
-lenet_model = load_model('H:\\django\\Handwritten-digit-recognition-1\\model\\lenet_model.h5')
-mlp_model = load_model('H:\\django\\Handwritten-digit-recognition-1\\model\\mlp_model.h5')
-logistic_model = load_model('H:\\django\\Handwritten-digit-recognition-1\\model\\mlp_model.h5')
+lenet_model = load_model('R:\Infosys-AI-Internship--1\model\lenet_model.h5')
+mlp_model = load_model('R:\Infosys-AI-Internship--1\model\mlp_model.h5')
+logistic_model = load_model('R:\Infosys-AI-Internship--1\model\logistic_model.h5')
 
 def preprocess_image(image_data):
     """
