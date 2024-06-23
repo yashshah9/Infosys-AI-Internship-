@@ -1,66 +1,76 @@
 /* Updated CSS with a different color scheme */
 
+/* Disable text selection for the entire sketchpadapp */
 #sketchpadapp {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  -webkit-touch-callout: none;  /* iOS Safari */
+  -webkit-user-select: none;    /* Safari */
+  -khtml-user-select: none;     /* Konqueror HTML */
+  -moz-user-select: none;       /* Firefox */
+  -ms-user-select: none;        /* Internet Explorer/Edge */
+  user-select: none;            /* Generic */
 }
 
+/* Styling for the clear button */
 #clear_button {
   margin-left: 15px;
   font-weight: bold;
-  color: red;  /* Updated color */
+  color: red;  /* Updated color for the clear button */
 }
 
+/* Styling for the confidence section */
 #confidence {
   font-family: 'Josefin Sans', sans-serif;
   margin-top: 7.5%;
 }
 
+/* Styling for the main content section */
 #content {
   margin: 0 auto;
   padding: 2% 15%;
   padding-bottom: 0;
 }
 
+/* Styling for the welcome message */
 .welcome {
   text-align: center;
   position: relative;
   color: rgb(83, 199, 199);  /* Updated color */
-  background-color: darkgreen;  /* Updated color */
+  background-color: darkgreen;  /* Updated background color */
   padding-top: 1%;
   padding-bottom: 1%;
   font-weight: bold;
   font-family: 'Prompt', sans-serif;
 }
 
+/* Styling for the footer */
 #footer {
   text-align: center;
-  background-color: #000000;  /* Updated color */
-  color: #fff;
+  background-color: #000000;  /* Updated background color */
+  color: #fff;  /* Updated text color */
   padding-top: 1%;
   padding-bottom: 0%;
 }
 
+/* Styling for the predict button */
 #predict_button {
   margin-right: 15px;
-  color: red;  /* Updated color */
+  color: red;  /* Updated color for the predict button */
   font-weight: bold;
 }
 
+/* Styling for the prediction heading */
 #prediction_heading {
   font-family: 'Josefin Sans', sans-serif;
   margin-top: 7.5%;
 }
 
+/* Styling for the result text */
 #result {
   font-family: 'Pacifico', cursive;
   font-size: 5rem;
 }
 
+/* Styling for the sketchpad */
 #sketchpad {
   height: 250px;
   width: 250px;
@@ -68,32 +78,37 @@
   border-radius: 4px;
 }
 
+/* Styling for the source section */
 #source {
   padding: 0 100px;
   text-align: center;
   margin-bottom: 10%;
 }
 
+/* Styling for the title section */
 #title {
   padding: 1.5% 15%;
   margin: 0 auto;
   text-align: center;
 }
 
+/* Styling for generic buttons */
 .btn {
   font-size: 15px;
   padding: 10px;
   -webkit-appearance: none;
-  background: #f0f0f0;  /* Updated color */
+  background: #f0f0f0;  /* Updated background color */
   border: 1px solid #888;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
+/* Styling for button divs */
 .buttons_div {
   margin-bottom: 30px;
 }
 
+/* Styling for headings */
 .heading {
   font-family: 'Varela Round', sans-serif;
   font-weight: 700;
@@ -101,12 +116,14 @@
   display: inline;
 }
 
+/* Styling for left-aligned elements */
 .leftside {
   text-align: center;
   margin: 0 auto;
   margin-top: 4%;
 }
 
+/* Styling for predicted answer */
 .predicted_answer {
   text-align: center;
   margin: 0 auto;
@@ -114,25 +131,31 @@
   padding-top: 0;
 }
 
+/* Styling for responsive images */
 .responsive_img {
   width: 75%;
   height: 10vw;
   object-fit: cover;
 }
 
+/* Styling for social media icons */
 .social-media-icons {
   margin: 10px 40px;
 }
 
+/* Styling for source column */
 .source-column {
   padding: 3% 2%;
 }
 
+/* Styling for source heading */
 .source-h2 {
   text-align: center;
   font-family: 'Pacifico', cursive;
   font-size: 2rem;
 }
+
+/* Styling for canvas container */
 .canvas-container {
   position: relative; /* Ensure relative positioning */
   width: 300px; /* Adjust width as needed */
@@ -140,18 +163,22 @@
   margin: 0 auto; /* Center horizontally */
 }
 
+/* Styling for prediction result section */
 #prediction-result {
   margin-top: 10px; /* Add some space between canvas and result */
 }
 
-#select_it{
+/* Styling for select_it element */
+#select_it {
   margin-top: 5px;
 }
 
-#lhs{
+/* Styling for lhs element */
+#lhs {
   position: fixed;
 }
 
+/* Styling for horizontal rule */
 hr {
   border: dotted #808080 6px;
   border-bottom: none;
@@ -160,21 +187,24 @@ hr {
   margin-bottom: 100px;
 }
 
+/* Styling for hyperlinks */
 a:link,
 a:visited,
 a:hover,
 a:active {
-  color: cyan;  /* Updated color */
+  color: cyan;  /* Updated link color */
   text-decoration: none;
 }
 
+/* Styling for paragraphs */
 p {
   font-family: 'Source Code Pro', monospace, sans-serif;
   margin-top: 1%;
 }
 
+/* Media query for screens larger than 720px */
 @media (min-width: 720px) {
   .leftside {
-      padding-left: 10%;
+    padding-left: 10%; /* Adjust left padding for larger screens */
   }
 }
