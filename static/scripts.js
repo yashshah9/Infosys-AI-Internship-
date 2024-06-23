@@ -198,7 +198,9 @@ function getTouchPos(e)
         touchY = touch.pageY - touch.target.offsetTop;
     }
 }
-
+// getTouchPos(e): Helper function to get touch position relative to the canvas.
+// Handles touch events, ensuring only one touch is considered (e.touches.length == 1).
+// Calculates touch coordinates relative to the canvas using touch.pageX, touch.pageY, and subtracting offsets.
 
 
 
@@ -248,7 +250,11 @@ function predict()
     .catch(error => console.error('Error:', error)); // Handle errors
 
 }
-
+// predict() Function: Initiates prediction based on the selected model.
+// Determines the API endpoint (modelEndpoint) based on the selected model from a dropdown.
+// Converts canvas image data to a base64 URL (imageData).
+// Performs a POST request using fetch() to send imageData to the server for prediction.
+// Handles the response by parsing it as JSON, determines the predicted digit, updates the prediction result element (prediction-result), and updates the chart using updateChart() with confidence percentages.
 
 
 
@@ -271,6 +277,9 @@ document.getElementById('clear_button').addEventListener("click", function () {
     ctx.fillRect(0, 0, canvas.width, canvas.height); // Fill canvas with black color
     document.getElementById('prediction-result').innerText = ''; // Clear prediction result
 });
+// Event Listeners: These listeners are set up for two buttons:
+// Predict Button: Calls predict() when clicked, initiating the prediction process.
+// Clear Button: Clears the canvas (ctx.clearRect()) and resets it to black (ctx.fillRect()), also clears the prediction result element (prediction-result).
 
 
 
@@ -327,6 +336,9 @@ function updateChart(confidenceArray) {
         barChart.update(); // Update chart
     }
 }
+// updateChart(confidenceArray): Updates or initializes the bar chart with confidence percentages.
+// If barChart does not exist, initializes it with chart data (chartData) and options (chartOptions).
+// If barChart already exists, updates its datasets with new confidence percentages (confidenceArray), recalculates background colors using generateColor(index), and calls barChart.update() to redraw the chart.
 
 
 
@@ -350,7 +362,9 @@ function generateColor(number)
     ];
     return colors[number % colors.length]; // Return color based on index
 }
-
+// generateColor(number): Helper function to generate colors for chart bars.
+// Uses a predefined array (colors) of RGBA values with transparency (0.5).
+// Returns a color from the array based on the index (number % colors.length), ensuring the color repeats if the index exceeds the array length.
 
 
 
@@ -367,3 +381,6 @@ document.addEventListener("DOMContentLoaded", function() {
     init(); // Initialize canvas and drawing context
     updateChart(confidencePercentages); // Update chart with initial confidence percentages
 });
+// DOMContentLoaded Event: Ensures that the initialization (init()) and initial chart update (updateChart(confidencePercentages)) occur after the DOM content is fully loaded.
+// Calls init() to set up canvas and event listeners.
+// Calls updateChart() to initialize the chart with initial confidence percentages (all zeros).

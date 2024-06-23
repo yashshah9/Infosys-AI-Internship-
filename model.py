@@ -1,12 +1,12 @@
-import numpy as np
-import matplotlib.pyplot as plt
-import tensorflow as tf
-import shutil
+import numpy as np  # Import numpy library for numerical operations with arrays
+import matplotlib.pyplot as plt  # Import matplotlib for plotting
+import tensorflow as tf  # Import TensorFlow for deep learning operations
+import shutil  # Import shutil for high-level file operations
 
-from tensorflow.keras.utils import to_categorical
-from tensorflow.keras.datasets import mnist 
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Dropout, Conv2D, AveragePooling2D, Flatten
+from tensorflow.keras.utils import to_categorical  # Import to_categorical for one-hot encoding
+from tensorflow.keras.datasets import mnist  # Import mnist dataset from Keras
+from tensorflow.keras.models import Sequential  # Import Sequential model from Keras
+from tensorflow.keras.layers import Dense, Dropout, Conv2D, AveragePooling2D, Flatten  # Import layers needed for the model architecture
 
 # Load MNIST dataset
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
