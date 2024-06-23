@@ -6,12 +6,31 @@ var touchX, touchY;
 var barChart;
 var confidencePercentages = Array(10).fill(0); // Array to store confidence percentages initialized to zero
 
+// Global Variables: These variables are declared globally to be accessible throughout the script.
+// canvas and ctx: These will store the canvas element and its 2D drawing context, respectively.
+// mouseX, mouseY: Hold current mouse coordinates on the canvas.
+// mouseDown: Indicates whether the mouse button is currently pressed (0 for false, 1 for true).
+// lastX, lastY: Store the last recorded coordinates of the mouse.
+// touchX, touchY: Hold current touch coordinates on the canvas (for touch devices).
+// barChart: Stores the instance of the chart object.
+// confidencePercentages: An array initialized with 10 zeros, intended to store confidence percentages for predictions.
+
+
+
+
+
+//-----------------------------------------------------------------------------------------------------------------//
+
+
+
+
+
 function init() {
     canvas = document.getElementById('sketchpad'); // Get canvas element
     ctx = canvas.getContext('2d'); // Get 2D drawing context
     ctx.fillStyle = "black"; // Set initial background color
     ctx.fillRect(0, 0, canvas.width, canvas.height); // Fill canvas with black color
-
+ 
     if (ctx) 
     {
          // Event listeners for mouse events
@@ -24,6 +43,20 @@ function init() {
         canvas.addEventListener('touchmove', sketchpad_touchMove, false);
     }
 }
+// init() Function: This function initializes the canvas and sets up event listeners for drawing and touch events.
+// Retrieves the canvas element and its 2D context (ctx).
+// Sets the initial background color of the canvas to black.
+// Adds event listeners for mouse and touch events (mousedown, mousemove, mouseup, touchstart, touchmove), calling respective handler functions (sketchpad_mouseDown, sketchpad_mouseMove, etc.).
+
+
+
+
+
+//-----------------------------------------------------------------------------------------------------------------//
+
+
+
+
 
 // Function to draw on the canvas
 function draw(ctx, x, y, size, isDown) 
@@ -42,6 +75,20 @@ function draw(ctx, x, y, size, isDown)
     lastX = x;
     lastY = y;
 }
+// draw() Function: This function is responsible for drawing on the canvas.
+// It takes parameters for context (ctx), coordinates (x, y), size of the drawing tool (size), and whether the mouse is currently down (isDown).
+// If isDown is true, it begins a new path, sets drawing properties (color, line width, join style), draws a line from the last position to the current one, and strokes it.
+// Updates lastX and lastY to the current coordinates.
+
+
+
+
+
+//-----------------------------------------------------------------------------------------------------------------//
+
+
+
+
 
 // Mouse down event handler
 function sketchpad_mouseDown(e) 
@@ -50,12 +97,26 @@ function sketchpad_mouseDown(e)
     getMousePos(e);
     draw(ctx, mouseX, mouseY, 12, false); // Start drawing
 }
+// sketchpad_mouseDown(e): Event handler for mouse down.
+// Sets mouseDown to 1 to indicate the mouse button is pressed.
+// Retrieves mouse coordinates using getMousePos(e).
+// Calls draw() to start drawing on the canvas.
+
+
+
+
 
 // Mouse up event handler
 function sketchpad_mouseUp() 
 { 
     mouseDown = 0; // Stop drawing
 }
+// sketchpad_mouseUp(): Event handler for mouse up.
+// Sets mouseDown to 0, indicating the mouse button is released and stops drawing.
+
+
+
+
 
 // Mouse move event handler
 function sketchpad_mouseMove(e) 
@@ -66,6 +127,13 @@ function sketchpad_mouseMove(e)
 
     }
 }
+// sketchpad_mouseMove(e): Event handler for mouse move.
+// Updates mouse coordinates using getMousePos(e).
+// If mouseDown is true, calls draw() to continue drawing on the canvas.
+
+
+
+
 
 // Function to get mouse position relative to the canvas
 function getMousePos(e) 
@@ -73,6 +141,19 @@ function getMousePos(e)
     mouseX = e.offsetX ? e.offsetX : e.layerX;
     mouseY = e.offsetY ? e.offsetY : e.layerY;
 }
+// getMousePos(e): Helper function to get mouse position relative to the canvas.
+// Determines mouse coordinates using e.offsetX and e.offsetY (standard properties) or fallbacks (e.layerX and e.layerY for compatibility).
+
+
+
+
+
+//-----------------------------------------------------------------------------------------------------------------//
+
+
+
+
+
 
 // Touch start event handler
 function sketchpad_touchStart(e) 
@@ -80,16 +161,32 @@ function sketchpad_touchStart(e)
     getTouchPos(e);
     draw(ctx, touchX, touchY, 12, false); // Start drawing
 
-    event.preventDefault();
+    e.preventDefault();
 }
+// sketchpad_touchStart(e): Event handler for touch start.
+// Gets touch coordinates using getTouchPos(e).
+// Calls draw() to start drawing on the canvas.
+// Prevents default touch behavior to avoid scrolling or other unintended actions.
+
+
+
+
 
 // Touch move event handler
 function sketchpad_touchMove(e) 
 {
     getTouchPos(e);
     draw(ctx, touchX, touchY, 12, true); // Continue drawing
-    event.preventDefault();
+    e.preventDefault();
 }
+// sketchpad_touchMove(e): Event handler for touch move.
+// Gets touch coordinates using getTouchPos(e).
+// Calls draw() to continue drawing on the canvas.
+// Prevents default touch behavior to avoid scrolling.
+
+
+
+
 
 // Function to get touch position relative to the canvas
 function getTouchPos(e) 
@@ -101,6 +198,18 @@ function getTouchPos(e)
         touchY = touch.pageY - touch.target.offsetTop;
     }
 }
+
+
+
+
+
+
+//-----------------------------------------------------------------------------------------------------------------//
+
+
+
+
+
 
 // Function to get touch position relative to the canvas
 function predict() 
@@ -140,6 +249,16 @@ function predict()
 
 }
 
+
+
+
+
+//-----------------------------------------------------------------------------------------------------------------//
+
+
+
+
+
 // Event listener for predict button click
 document.getElementById('predict_button').addEventListener('click', function() {
     predict(); // Call predict function
@@ -152,6 +271,17 @@ document.getElementById('clear_button').addEventListener("click", function () {
     ctx.fillRect(0, 0, canvas.width, canvas.height); // Fill canvas with black color
     document.getElementById('prediction-result').innerText = ''; // Clear prediction result
 });
+
+
+
+
+
+//-----------------------------------------------------------------------------------------------------------------//
+
+
+
+
+
 
 // Function to update the bar chart with confidence percentages
 function updateChart(confidenceArray) {
@@ -198,6 +328,17 @@ function updateChart(confidenceArray) {
     }
 }
 
+
+
+
+
+//-----------------------------------------------------------------------------------------------------------------//
+
+
+
+
+
+
 // Function to generate color for chart bars
 function generateColor(number) 
 {
@@ -209,6 +350,16 @@ function generateColor(number)
     ];
     return colors[number % colors.length]; // Return color based on index
 }
+
+
+
+
+
+//-----------------------------------------------------------------------------------------------------------------//
+
+
+
+
 
 
 // Initialize the application when DOM content is loaded
