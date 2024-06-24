@@ -37,11 +37,17 @@ The MNIST dataset consists of grayscale images of size 28x28 pixels, each repres
 ### Logistic Regression
 A simple model for binary and multi-class classification problems. For MNIST, it treats each pixel as a feature.
 
+![fig-2](https://github.com/yashshah9/Infosys-AI-Internship-/assets/160280438/435aee7c-772f-4a82-99db-5a90e6df546e)
+
+
 ### Multilayer Perceptron (MLP)
 A type of neural network with one or more hidden layers. For MNIST, our MLP model consists of:
 - Input layer with 784 units (one for each pixel)
 - One or more hidden layers with ReLU activation
 - Output layer with 10 units and softmax activation
+- 
+![fig-3](https://github.com/yashshah9/Infosys-AI-Internship-/assets/160280438/f148023d-df94-46ff-9161-770cb7a81e5e)
+
 
 ### LeNet-5
 A classic CNN architecture proposed by Yann LeCun. It consists of:
