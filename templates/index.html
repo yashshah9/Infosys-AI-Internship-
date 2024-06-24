@@ -38,8 +38,13 @@
                             <option value="logistic">Logistic Regression</option>
                         </select>
                         <button type="button" class="bg-gray-800 text-white ml-2 py-2 px-4 rounded-md shadow-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600" id="predict_button" aria-label="Predict">Predict</button>
-                        <div id="prediction-result" class="text-black text-2xl font-bold mt-4"></div>
+                        <!-- <div id="prediction-result" class="text-black text-2xl font-bold mt-4"></div> -->
+                       
                     </div>
+                    <div id="prediction-result" class="text-black text-2xl font-bold mt-4"></div>
+                    <div class="flex-grow"></div>
+                    <button type="button" class="bg-gray-800 text-white ml-2 py-2 px-4 rounded-md shadow-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600 " id="predict_buttons" aria-label="Predicts">Predict All</button>
+                    <div id="prediction-results" class="text-black text-2xl font-bold mt-4"></div>
                 </div>
                 <!-- Right section: Bar chart for displaying prediction results -->
                 <div class="flex flex-col justify-center items-center bg-white rounded-lg shadow-md p-6">

@@ -126,6 +126,31 @@ def predict_logistic():
     # Return the prediction results as JSON
     return jsonify({'results': prediction[0]})
 
+
+# Route to predict using all three models
+@app.route('/predict', methods=['POST'])
+def predict():
+    """
+    Predict using all three models simultaneously.
+    """
+    # Get the image data from the POST request JSON payload
+    image_data = request.json['image_data']
+    
+    # Preprocess the image for model prediction
+    image = preprocess_image(image_data)
+    
+    # Predict using all three models
+    lenet_prediction = predict_with_model(lenet_model, image)
+    mlp_prediction = predict_with_model(mlp_model, image, reshape=True)
+    logistic_prediction = predict_with_model(logistic_model, image, reshape=True)
+    
+    # Return the predictions as JSON
+    return jsonify({
+        'lenet_prediction': lenet_prediction[0],
+        'mlp_prediction': mlp_prediction[0],
+        'logistic_prediction': logistic_prediction[0]
+    })
+
 # Main entry point: Start the Flask application
 if __name__ == '__main__':
     app.run(debug=True)

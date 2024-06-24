@@ -248,7 +248,6 @@ function predict()
         updateChart(data.results); // Update chart with confidence percentages
     })
     .catch(error => console.error('Error:', error)); // Handle errors
-
 }
 // predict() Function: Initiates prediction based on the selected model.
 // Determines the API endpoint (modelEndpoint) based on the selected model from a dropdown.
@@ -256,7 +255,61 @@ function predict()
 // Performs a POST request using fetch() to send imageData to the server for prediction.
 // Handles the response by parsing it as JSON, determines the predicted digit, updates the prediction result element (prediction-result), and updates the chart using updateChart() with confidence percentages.
 
+// Function to predict using all models simultaneously
+function predict_all() {
+    var imageData = canvas.toDataURL(); // Get image data from canvas as base64 URL
 
+    // Predict using LeNet model
+    var lenetPrediction = fetch('/predict_lenet', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ image_data: imageData })
+    }).then(response => response.json());
+
+    // Predict using MLP model
+    var mlpPrediction = fetch('/predict_mlp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ image_data: imageData })
+    }).then(response => response.json());
+
+    // Predict using logistic regression model
+    var logisticPrediction = fetch('/predict_logistic', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ image_data: imageData })
+    }).then(response => response.json());
+
+    // Handle all predictions concurrently
+    Promise.all([lenetPrediction, mlpPrediction, logisticPrediction])
+        .then(predictions => {
+            displayPredictions(predictions); // Call function to display predictions
+        })
+        .catch(error => console.error('Error:', error));
+}
+
+
+
+
+
+//-----------------------------------------------------------------------------------------------------------------//
+// Function to display predictions
+function displayPredictions(predictions) {
+    // Extract predicted digits from each model's prediction results
+    var lenetDigit = predictions[0].results.indexOf(Math.max(...predictions[0].results));
+    var mlpDigit = predictions[1].results.indexOf(Math.max(...predictions[1].results));
+    var logisticDigit = predictions[2].results.indexOf(Math.max(...predictions[2].results));
+
+    // Display predicted digits
+    document.getElementById('prediction-result').innerHTML = `
+        <p>LeNet-5 Predicted Digit: ${lenetDigit}</p>
+        <p>MLP Predicted Digit: ${mlpDigit}</p>
+        <p>Logistic Regression Predicted Digit: ${logisticDigit}</p>
+    `;
+
+    // Update chart with confidence percentages from the LeNet-5 model
+    updateChart(predictions[0].results);
+}
 
 
 //-----------------------------------------------------------------------------------------------------------------//
@@ -268,6 +321,9 @@ function predict()
 // Event listener for predict button click
 document.getElementById('predict_button').addEventListener('click', function() {
     predict(); // Call predict function
+});
+document.getElementById('predict_buttons').addEventListener('click', function() {
+    predict_all(); // Call predict function
 });
 
 // Event listener for clear button click

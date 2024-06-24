@@ -76,6 +76,7 @@
   width: 250px;
   border: 2px solid #888;
   border-radius: 4px;
+  margin-top: 20px;
 }
 
 /* Styling for the source section */
@@ -161,7 +162,9 @@
   width: 300px; /* Adjust width as needed */
   height: 300px; /* Adjust height as needed */
   margin: 0 auto; /* Center horizontally */
+  
 }
+
 
 /* Styling for prediction result section */
 #prediction-result {
@@ -176,6 +179,21 @@
 /* Styling for lhs element */
 #lhs {
   position: fixed;
+}
+
+
+#prediction-results {
+  min-height: 50px; /* Adjust as needed */
+  overflow-y: auto; /* Ensure long content does not push elements */
+}
+
+#select_it {
+  display: flex;
+  align-items: center;
+}
+
+#select_it > * {
+  margin-right: 8px; /* Adjust spacing as needed */
 }
 
 /* Styling for horizontal rule */
