@@ -29,7 +29,7 @@ Frontend Functionality (scripts.js)
 The Flask application serves the frontend and handles API requests.
 Routes like '/predict_lenet', '/predict_mlp', and '/predict_logistic' receive the image data from the frontend, process it, and return the prediction results.
 
-**Model Prediction:**
+### Model Prediction:
  - Each model endpoint processes the image, feeds it into the respective trained model, and returns the prediction probabilities.
 
 ## Detailed Workflow:
