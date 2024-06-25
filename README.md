@@ -61,6 +61,3 @@ A classic CNN architecture proposed by Yann LeCun. It consists of:
 ## Contributing
 Contributions are welcome! If you'd like to contribute to this project, please fork the repository and create a pull request with your improvements.
 
----
-
-This README provides a comprehensive overview of the project, including the problem statement, dataset details, model architectures, and instructions for contributing. Adjust URLs and paths for images as necessary to match your repository structure.
