@@ -28,10 +28,12 @@ Frontend Functionality (scripts.js)
 
 The Flask application serves the frontend and handles API requests.
 Routes like '/predict_lenet', '/predict_mlp', and '/predict_logistic' receive the image data from the frontend, process it, and return the prediction results.
-- **Model Prediction:**
-    Each model endpoint processes the image, feeds it into the respective trained model, and returns the prediction probabilities.
 
-## Detailed Workflow
+**Model Prediction:**
+ - Each model endpoint processes the image, feeds it into the respective trained model, and returns the prediction probabilities.
+
+## Detailed Workflow:
+
 **User Interaction:**
 
 - The user draws a digit on the canvas using the mouse or touch input.
@@ -52,7 +54,8 @@ The backend processes the image, makes a prediction using the selected model, an
 - The frontend receives the prediction results.
 - The predicted digit and confidence percentages are displayed, and the bar chart is updated to reflect the model's  confidence in each digit class.
 
-- **Code Integration**
-   index.html: Provides the user interface, with elements for drawing, selecting models, and displaying results.
-   scripts.js: Implements the logic for drawing on the canvas, handling user interactions, sending image data to the backend, and updating the UI with the results.
-   app.py: Handles the server-side logic, processing incoming image data, running predictions using pre-trained models, and returning the results to the frontend.
+**Code Integration**
+
+ - index.html: Provides the user interface, with elements for drawing, selecting models, and displaying results.
+ - scripts.js: Implements the logic for drawing on the canvas, handling user interactions, sending image data to the backend, and updating the UI with the results.
+ - app.py: Handles the server-side logic, processing incoming image data, running predictions using pre-trained models, and returning the results to the frontend.
