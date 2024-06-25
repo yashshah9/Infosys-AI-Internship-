@@ -44,7 +44,7 @@ Routes like '/predict_lenet', '/predict_mlp', and '/predict_logistic' receive th
 - The fetch() API sends this image data to the Flask backend at the appropriate model endpoint (e.g., '/predict_lenet').
 
 #### Model Prediction:
-The backend processes the image, makes a prediction using the selected model, and sends the results back as a JSON response.
+- The backend processes the image, makes a prediction using the selected model, and sends the results back as a JSON response.
 
 #### Display Results:
 - The frontend receives the prediction results.
